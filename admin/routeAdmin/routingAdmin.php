@@ -40,7 +40,14 @@ elseif ($path == 'newsEditResult' and isset($_GET['id']))
 {
     $response = controllerAdminNews::NewsEditResult($_GET['id']);
 }
-
+elseif ($path =='newsDel' && isset($_GET['id']))
+{
+    $response = controllerAdminNews::newsDeleteForm($_GET['id']);
+}
+elseif ($path =='newsDelResult' && isset($_GET['id']))
+{
+    $response = controllerAdminNews::newsDeleteResult($_GET['id']);
+}
 else
 {   // Страница не существует
     $response = controllerAdmin::error404();
