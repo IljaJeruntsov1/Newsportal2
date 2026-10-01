@@ -24,6 +24,19 @@
         $response = Controller::InsertComment($_GET['comment'],$_GET['id']);
     }
 
+    //-------------------register user
+elseif ($path == 'registerForm' )
+{    // form register
+    $control = new Controller();    
+    $response = $control->registerForm();
+}
+elseif ($path == 'registerAnswer' )
+{    // register user
+
+    $control = new Controller();
+    $response = $control->registerUser();
+}
+
    else{
        $response = Controller::error404();
    }
