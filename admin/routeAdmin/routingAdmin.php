@@ -19,19 +19,26 @@ elseif ($path == 'logout')
     // Выход
     $response = controllerAdmin::logoutAction();
 }
-else if ($path == 'newsAdmin')
+elseif ($path == 'newsAdmin')
 {
     // Список новостей
     $response = controllerAdminNews::NewsList();
 }
-
-//------------------add news
-    elseif($path=='newsAdd') {
-    $response=controllerAdminNews::newsAddForm();
-
+elseif ($path == 'newsAdd')
+{
+    $response = controllerAdminNews::NewsAddForm();
 }
-elseif($path == 'newsAddResult') {
-$response = controllerAdminNews::newsAddResult();
+elseif ($path == 'newsAddResult')
+{
+    $response = controllerAdminNews::NewsAddResult();
+}
+elseif ($path == 'newsEdit' and isset($_GET['id']))
+{
+    $response = controllerAdminNews::NewsEditForm($_GET['id']);
+}
+elseif ($path == 'newsEditResult' and isset($_GET['id']))
+{
+    $response = controllerAdminNews::NewsEditResult($_GET['id']);
 }
 
 else
